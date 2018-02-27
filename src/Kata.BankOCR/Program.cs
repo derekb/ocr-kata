@@ -6,7 +6,8 @@ namespace Kata.BankOCR
    {
       public static void Main(string[] args)
       {
-         Console.WriteLine("Hello World!");
+         if (args.Length != 1)
+            Console.WriteLine("Usage: ocr-kata </path/to/file>");
       }
    }
 }
