@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kata.BankOCR", "src\Kata.BankOCR\Kata.BankOCR.csproj", "{0B7C5D29-FBA3-489C-A2B0-945623BB0525}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kata.BankOCR.Test", "src\Kata.BankOCR.Test\Kata.BankOCR.Test.csproj", "{B0FEAB14-8D81-49C9-98C2-396BBA6B532E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B7C5D29-FBA3-489C-A2B0-945623BB0525}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B7C5D29-FBA3-489C-A2B0-945623BB0525}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B7C5D29-FBA3-489C-A2B0-945623BB0525}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B7C5D29-FBA3-489C-A2B0-945623BB0525}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0FEAB14-8D81-49C9-98C2-396BBA6B532E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0FEAB14-8D81-49C9-98C2-396BBA6B532E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0FEAB14-8D81-49C9-98C2-396BBA6B532E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0FEAB14-8D81-49C9-98C2-396BBA6B532E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DA3BD49D-7033-4A1A-9F68-237B11E95194}
+	EndGlobalSection
+EndGlobal
