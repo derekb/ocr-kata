@@ -16,4 +16,8 @@
     <ProjectReference Include="..\Kata.BankOCR\Kata.BankOCR.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Representations\" />
+  </ItemGroup>
+
 </Project>

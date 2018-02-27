@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Kata.BankOCR.Parsers;
 
 namespace Kata.BankOCR
 {
@@ -14,12 +15,7 @@ namespace Kata.BankOCR
 
          var filePath = args.Single();
 
-         var entries =
-            File
-               .ReadAllLines(filePath)
-               .Select((line, idx) => new {Line = line, Idx = idx})
-               .GroupBy(item => item.Idx / 4)
-               .Select(x => x.Select(y => y.Line).ToArray());
+         var entries = EntryParser.Parse(filePath);
       }
    }
 }
