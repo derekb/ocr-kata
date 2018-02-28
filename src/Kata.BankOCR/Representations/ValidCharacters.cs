@@ -41,12 +41,14 @@ namespace Kata.BankOCR.Representations
               "|_|", '0'},
 
          };
-      public static bool IsValidCharacter(string input)
+      private static bool IsValidCharacter(string input)
       {
          return validCharacters.ContainsKey(input);
       }
       public static char ToCharacter(string input)
       {
+         if (!IsValidCharacter(input))
+            return '?';
          return validCharacters[input];
       }
    }
