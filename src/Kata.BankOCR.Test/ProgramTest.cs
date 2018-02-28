@@ -1,3 +1,4 @@
+using System.IO;
 using NUnit.Framework;
 
 namespace Kata.BankOCR.Test
@@ -8,7 +9,9 @@ namespace Kata.BankOCR.Test
         [Test]
         public void TestsCanBeRun()
         {
-           Program.Main(new [] { " " });
+           var pathToUseCase = Path.Combine(TestContext.CurrentContext.TestDirectory, "../../../ExampleFiles/UseCase1.txt");
+
+           Program.Main(new [] { pathToUseCase });
            Assert.Pass();
         }
     }
