@@ -61,5 +61,40 @@ namespace Kata.BankOCR.Test.Representations
 
          Assert.That(entry.AsText(), Is.EqualTo("1234567890"));
       }
+
+      [Test]
+      public void HasValidChecksum()
+      {
+         var charWidth = 3;
+         var rawEntry =
+            new[]
+            {
+               " _  _  _  _  _  _  _  _  _ ",
+               "| || || || || || || || || |",
+               "|_||_||_||_||_||_||_||_||_|",
+               "\r\n"
+            };
+
+         var entry = Entry.FromLines(rawEntry, charWidth);
+
+         Assert.That(entry.IsValid(), Is.True);
+      }
+      [Test]
+      public void HasInvalidChecksum()
+      {
+         var charWidth = 3;
+         var rawEntry =
+            new[]
+            {
+               " _  _  _  _  _  _  _  _    ",
+               "| || || || || || || || |  |",
+               "|_||_||_||_||_||_||_||_|  |",
+               "\r\n"
+            };
+
+         var entry = Entry.FromLines(rawEntry, charWidth);
+
+         Assert.That(entry.IsValid(), Is.False);
+      }
    }
 }

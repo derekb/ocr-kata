@@ -22,6 +22,25 @@ namespace Kata.BankOCR.Representations
           return new string(GetCharacters().ToArray());
        }
 
+       public bool IsValid()
+       {
+          var chars = 
+             this
+                .AsText()
+                .ToCharArray()
+                .Select(x => Int32.Parse(x.ToString()))
+                .ToArray();
+
+          var checksum = 0;
+
+          for (int i = 0; i < chars.Length; i++)
+          {
+             checksum += chars[i] * (chars.Length - i);
+          }
+
+          return checksum % 11 == 0;
+       }
+
        private IEnumerable<char> GetCharacters()
        {
           for (int i = 0; i < lines[0].Length; i += _charWidth)
