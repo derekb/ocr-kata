@@ -48,7 +48,7 @@ namespace Kata.BankOCR.Representations
              var rawCharacter = lines[0].Substring(i, _charWidth) +
                          lines[1].Substring(i, _charWidth) +
                          lines[2].Substring(i, _charWidth);
-             yield return ValidCharacters.ToCharacter(rawCharacter);
+             yield return CharacterParser.ToCharacter(rawCharacter);
           }
        }
     }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Kata.BankOCR.Representations
 {
-   public class ValidCharacters
+   public class CharacterParser
    {
       private static readonly Dictionary<string, char> validCharacters = 
          new Dictionary<string, char>

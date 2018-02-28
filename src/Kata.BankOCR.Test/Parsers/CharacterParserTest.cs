@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace Kata.BankOCR.Test.Representations
 {
    [TestFixture]
-   public class ValidCharactersTest
+   public class CharacterParserTest
    {
       [Test]
       public void ZeroAsRawInputYieldsZero()
@@ -14,7 +14,7 @@ namespace Kata.BankOCR.Test.Representations
             "| |" +
             "|_|";
 
-         Assert.That(ValidCharacters.ToCharacter(rawEntry), Is.EqualTo('0'));
+         Assert.That(CharacterParser.ToCharacter(rawEntry), Is.EqualTo('0'));
       }
    }
 }
