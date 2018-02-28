@@ -96,5 +96,23 @@ namespace Kata.BankOCR.Test.Representations
 
          Assert.That(entry.IsValid(), Is.False);
       }
+
+      [Test]
+      public void IllegibleCharactersPrintAsQuestionMarks()
+      {
+         var charWidth = 3;
+         var rawEntry =
+            new[]
+            {
+               "    _  _  _  _  _  _     _ ",
+               "|_||_|| || ||_   |  |  | _ ",
+               "  | _||_||_||_|  |  |  | _|",
+               "\r\n"
+            };
+
+         var entry = Entry.FromLines(rawEntry, charWidth);
+
+         Assert.That(entry.AsText(), Is.EqualTo("49006771?"));
+      }
    }
 }
