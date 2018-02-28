@@ -19,14 +19,14 @@ namespace Kata.BankOCR
          var entries = EntryParser.Parse(filePath, 3);
 
          foreach(var entry in entries)
-            Console.WriteLine(PrintEntry(entry));
+            Console.WriteLine(Format(entry));
       }
 
-      private static string PrintEntry(Entry entry)
+      private static string Format(Entry entry)
       {
          var accountNumber = entry.AsText();
-         var illegible = accountNumber.Contains("?") ? " ILL" : String.Empty;
-         return $"{accountNumber}{illegible}";
+         var legibility = accountNumber.Contains("?") ? " ILL" : String.Empty;
+         return $"{accountNumber}{legibility}";
       }
    }
 }
