@@ -25,5 +25,41 @@ namespace Kata.BankOCR.Test.Representations
 
          Assert.That(entry.AsText(), Is.EqualTo("000000000"));
       }
+
+      [Test]
+      public void ParsedCharacterCountShouldMatchEntry()
+      {
+         var charWidth = 3;
+         var rawEntry =
+            new[]
+            {
+               " _  _  _  _  _  _  _  _  _ ",
+               "| || || || || || || || || |",
+               "|_||_||_||_||_||_||_||_||_|",
+               "\r\n"
+            };
+
+         var entry = Entry.FromLines(rawEntry, charWidth);
+
+         Assert.That(entry.AsText().Length, Is.EqualTo(rawEntry[0].Length / charWidth));
+      }
+
+      [Test]
+      public void EntryCanParseAllTenDigits()
+      {
+         var charWidth = 3;
+         var rawEntry =
+            new[]
+            {
+               "    _  _     _  _  _  _  _  _ ",
+               "  | _| _||_||_ |_   ||_||_|| |",
+               "  ||_  _|  | _||_|  ||_| _||_|",
+               "\r\n"
+            };
+
+         var entry = Entry.FromLines(rawEntry, charWidth);
+
+         Assert.That(entry.AsText(), Is.EqualTo("1234567890"));
+      }
    }
 }
