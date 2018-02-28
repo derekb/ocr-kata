@@ -11,7 +11,7 @@ namespace Kata.BankOCR.Test.Parsers
       public void UseCaseOneShouldHave11Entries()
       {
          var pathToUseCase = Path.Combine(TestContext.CurrentContext.TestDirectory, "../../../ExampleFiles/UseCase1.txt");
-         Assert.That(EntryParser.Parse(pathToUseCase), Has.Count.EqualTo(11));
+         Assert.That(EntryParser.Parse(pathToUseCase, 3), Has.Count.EqualTo(11));
       }
    }
 }

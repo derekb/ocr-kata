@@ -15,7 +15,10 @@ namespace Kata.BankOCR
 
          var filePath = args.Single();
 
-         var entries = EntryParser.Parse(filePath);
+         var entries = EntryParser.Parse(filePath, 3);
+
+         foreach(var entry in entries)
+            Console.WriteLine(entry.AsText());
       }
    }
 }
